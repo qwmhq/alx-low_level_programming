@@ -2,12 +2,12 @@
 
 /**
  * main - main function
- * Return: always 0 
+ * Return: always 0
  */
 int main(void)
 {
 	int sum, i;
-	
+
 	sum = 0;
 
 	for (i = 1; i < 1024; i++)
