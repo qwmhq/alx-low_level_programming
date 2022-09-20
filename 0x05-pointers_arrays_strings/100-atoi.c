@@ -12,6 +12,7 @@ int _atoi(char *s)
 {
 	char *c;
 	int minuscount;
+	unsigned int result;
 
 	c = s;
 	minuscount = 0;
@@ -24,11 +25,12 @@ int _atoi(char *s)
 		}
 		if ((*c >= '0' && *c <= '9'))
 		{
+			result = atoi(c);
 			if (minuscount % 2)
 			{
-				_putchar('-');
+				result = -result;
 			}
-			return (atoi(c));
+			return (result);
 		}
 		c++;
 	}
