@@ -13,7 +13,7 @@ int palindrome(char *p1, char *p2)
 		return (1);
 	if (*p1 != *p2)
 		return (0);
-	return (palindrome(p1 + 1, p2 -1));
+	return (palindrome(p1 + 1, p2 - 1));
 }
 
 /**
