@@ -18,7 +18,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	total_count = 0;
+	total_count = 1;
 
 	for (i = 0; i < ac; i++)
 	{
@@ -31,6 +31,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		size_t char_count = strlen(av[i]);
+
 		for (j = 0; j <= char_count; j++)
 		{
 			if (j == char_count)
