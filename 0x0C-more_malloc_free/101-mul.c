@@ -21,7 +21,7 @@ int is_number(char *str)
  */
 int main(int argc, char **argv)
 {
-	long long int n1, n2, result;
+	long n1, n2, result;
 
 	if (argc != 3 || !is_number(*(argv + 1)) || !is_number(*(argv + 2)))
 	{
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	n2 = atoll(*(argv + 2));
 	result = n1 * n2;
 
-	printf("%lld\n", result);
+	printf("%ld\n", result);
 
 	return (0);
 }
