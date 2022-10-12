@@ -27,9 +27,9 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	for (i = 0; i < no_of_bytes; i++)
+	for (i = 1; i <= no_of_bytes; i++)
 	{
-		printf("%x ", *(p + i));
+		printf("%02x ", *(p + i - 1));
 	}
 
 	printf("\n");
