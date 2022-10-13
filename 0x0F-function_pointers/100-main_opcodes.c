@@ -27,12 +27,13 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	for (i = 1; i <= no_of_bytes; i++)
+	for (i = 0; i < no_of_bytes; i++)
 	{
-		printf("%02x ", *(p + i - 1));
+		if (i < no_of_bytes - 1)
+			printf("%02x ", *(p + i));
+		else
+			printf("%02x\n", *(p + i));
 	}
-
-	printf("\n");
 
 	return (0);
 }
