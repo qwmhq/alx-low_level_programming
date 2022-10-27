@@ -55,13 +55,11 @@ size_t print_listint_safe(const listint_t *head)
 			if (!looped)
 				looped = 1;
 			else
-				break;
+				exit(98);
 		}
 		printf("[%p] %d\n", (void *)head, head->n);
 		size++;
 		head = head->next;
 	}
-	if (first_loop_node)
-		printf("-> [%p] %d\n", (void *)first_loop_node, first_loop_node->n);
 	return (size);
 }
