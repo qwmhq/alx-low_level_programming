@@ -40,10 +40,9 @@ void copy_file(char *source, char *dest)
 	fd1 = open(source, O_RDONLY);
 	fd2 = open(dest, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	do {
-		read_count = read(fd1, buf, 1023);
-		buf[read_count] = '\0';
+		read_count = read(fd1, buf, 1024);
 		write_count = write(fd2, buf, read_count);
-		if (fd1 == -1)
+		if (fd1 == -1 || read_count == -1)
 		{
 			free(buf);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
@@ -55,7 +54,7 @@ void copy_file(char *source, char *dest)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 			exit(99);
 		}
-	} while (read_count == 1023);
+	} while (read_count == 1024);
 	free(buf);
 	close_fd(fd1);
 	close_fd(fd2);
